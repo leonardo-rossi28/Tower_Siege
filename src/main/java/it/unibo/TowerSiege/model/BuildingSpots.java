@@ -32,7 +32,7 @@ public class BuildingSpots {
         return tower != null;
     }
 
-    public void setTower() {
+    public Tower getTower() {
         return tower;
     }
 

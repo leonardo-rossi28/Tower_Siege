@@ -18,7 +18,7 @@ public class Tower {
         this.cooldownTicks=0; 
     }
 
-    public void Position(double x, double y){
+    public void setPosition(double x, double y){
         this.pixelX=x;
         this.pixelY=y;
     }

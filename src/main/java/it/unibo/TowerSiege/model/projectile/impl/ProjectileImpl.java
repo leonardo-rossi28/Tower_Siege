@@ -43,12 +43,11 @@ public class ProjectileImpl implements Projectile{
             return;
         }
 
-        double tx=target.getPixelX()+20;
-        double ty=target.getPixelY()+20;
-
-        double dx=tx-x;
-        double dy=ty-y;
-        double dist = Math.sqrt(dx*dx + dy*dy);
+        final double tx=target.getPixelX()+20;
+        final double ty=target.getPixelY()+20;
+        final double dx=tx-x;
+        final double dy=ty-y;
+        final double dist = Math.sqrt(dx*dx + dy*dy);
 
         if( dist <= speed){
             target.takeDamage(source.getDamage());

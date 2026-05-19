@@ -15,10 +15,13 @@ public class TowerImpl implements Tower{
     private double pixelX;
     private double pixelY;
     private int level;
-    private boolean alive;
+    private final boolean alive;
     private int cooldownTicks; 
 
 
+    /**
+     * @param type
+    */
     public TowerImpl(TowerType type) {  
         this.type=type;
         this.level=1;  

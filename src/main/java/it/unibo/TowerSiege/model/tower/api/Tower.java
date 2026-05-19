@@ -18,12 +18,15 @@ public interface Tower {
     void tick();
 
     /**
-     * @param enemy
+     * 
+     * @param enemy enemy to check
      * @return true if enemy is in range
      */
     boolean isEnemyInRange(Enemy enemy);
 
     /**
+     * Attempts to fire the enemy.
+     * 
      * @param enemy
      * @return Projectile or null if on cooldown or out of range
      */

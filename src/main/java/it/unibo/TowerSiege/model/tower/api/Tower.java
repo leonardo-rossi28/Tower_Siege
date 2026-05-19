@@ -1,7 +1,7 @@
 package it.unibo.TowerSiege.model.tower.api;
 
 import it.unibo.TowerSiege.model.projectile.api.Projectile;
-import it.unibo.TowerSiege.enemy.api.Enemy;
+import it.unibo.TowerSiege.model.enemy.api.Enemy;
 import it.unibo.TowerSiege.model.tower.TowerType;
 
 
@@ -64,4 +64,9 @@ public interface Tower {
      * @return damage
      */
     int getDamage();
+
+    /**
+     * @return level
+     */
+    int getLevel();
 }

@@ -11,21 +11,31 @@ import it.unibo.TowerSiege.model.projectile.api.Projectile;
  * projectile continues to move.
  */
 public class ProjectileImpl implements Projectile{
+   
     private final TowerImpl source;
     private final EnemyImpl target;
     private double x;
     private double y;
-    private final double speed=15.0;
+    private static final double speed=15.0;
     private boolean alive=true;
 
 
-    public ProjectileImpl(TowerImpl source, EnemyImpl target){
+
+    /**
+     * 
+     * @param source
+     * @param target
+     */
+    public ProjectileImpl(final TowerImpl source, final EnemyImpl target){
         this.source=source;
         this.target=target;
         this.x=source.getPixelX();
         this.y=source.getPixelY();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void update(){
         if(!target.isAlive()){
@@ -34,7 +44,7 @@ public class ProjectileImpl implements Projectile{
         }
 
         double tx=target.getPixelX()+20;
-        double ty=target.getPiexelY()+20;
+        double ty=target.getPixelY()+20;
 
         double dx=tx-x;
         double dy=ty-y;
@@ -54,21 +64,34 @@ public class ProjectileImpl implements Projectile{
         
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public double getX(){
         return x;
     }
     
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public double getY(){
         return y;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public TowerType getSourceTowerType(){
         return source.getType();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isAlive(){
         return alive;

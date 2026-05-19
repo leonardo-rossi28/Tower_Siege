@@ -1,14 +1,10 @@
 package it.unibo.TowerSiege.model.tower.impl;
 
-<<<<<<< HEAD
 import it.unibo.TowerSiege.model.enemy.api.Enemy;
-=======
-import it.unibo.TowerSiege.model.enemy.impl.EnemyImpl;
->>>>>>> main
 import it.unibo.TowerSiege.model.tower.TowerType;
 import it.unibo.TowerSiege.model.tower.api.Tower;
 import it.unibo.TowerSiege.model.projectile.api.Projectile;
-import it.unibo.TowerSIege.model.progecyile.impl.ProjectileImpl;
+import it.unibo.TowerSiege.model.projectile.impl.ProjectileImpl;
 
 
 
@@ -49,15 +45,11 @@ public class TowerImpl implements Tower{
         }
     }
 
-<<<<<<< HEAD
     /**
      * {@inheritDoc}
      */
     @Override
     public boolean isEnemyInRange(Enemy enemy){
-=======
-    public boolean isEnemyInRange(EnemyImpl enemy){
->>>>>>> main
         double dx= enemy.getPixelX()-pixelX;
         double dy= enemy.getPixelY() - pixelY;
         double distSq= dx*dx + dy*dy;
@@ -103,7 +95,7 @@ public class TowerImpl implements Tower{
     public int getLevel(){
         return level;
     }
-ù/**
+    /**
      * {@inheritDoc}
      */
     @Override
@@ -127,6 +119,20 @@ public class TowerImpl implements Tower{
         return type.getDamage() + (level -1)*2;
      }
     
+    /**
+      * {@inheritDoc}
+    */
+     @Override
+     public Projectile attack(final Enemy enemy){
+        if(!alive || cooldownTicks > 0){
+            return null;
+        }
+        if(isEnemyInRange(enemy)){
+            cooldownTicks=type.getCooldown();
+            return new ProjectileImpl(this,enemy);
+        }
+        return null;
+     }
 
 
 

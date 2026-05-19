@@ -1,0 +1,33 @@
+package it.unibo.TowerSiege.model.projectile.api;
+
+import it.unibo.TowerSiege.model.tower.TowerType;
+
+public interface Projectile {
+
+    /**
+     * advance the projectile or applies damage on impact
+     */
+    void update();
+
+    /**
+     * @return pixel x
+     */
+    double getX();
+
+    /**
+     * @return pixel Y
+     */
+    double getY();
+
+    /**
+     * @return source tower type
+     */
+    TowerType getSourcTowerType();
+
+
+    /**
+     * @return true if alive
+     */
+    boolean isAlive();
+    
+}

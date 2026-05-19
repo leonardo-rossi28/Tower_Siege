@@ -3,13 +3,14 @@ package it.unibo.TowerSiege.model.projectile.impl;
 import it.unibo.TowerSiege.model.enemy.impl.Enemy;
 import it.unibo.TowerSiege.model.tower.TowerType;
 import it.unibo.TowerSiege.model.tower.impl.TowerImpl;
+import it.unibo.TowerSiege.model.projectile.api.Projectile;
 
 /**
  * This class represent a projectile that moves towards the target
  * The projectile hit if the enemy is in the same pixel otherwise the 
  * projectile continues to move.
  */
-public class Projectile {
+public class ProjectileImpl {
     private final TowerImpl source;
     private final Enemy target;
     private double x;
@@ -18,13 +19,14 @@ public class Projectile {
     private boolean alive=true;
 
 
-    public Projectile(TowerImpl source, Enemy target){
+    public ProjectileImpl(TowerImpl source, Enemy target){
         this.source=source;
         this.target=target;
         this.x=source.getPixelX();
         this.y=source.getPixelY();
     }
 
+    @Override
     public void update(){
         if(!target.isAlive()){
             this.alive=false;
@@ -52,15 +54,22 @@ public class Projectile {
         
     }
 
+    @Override
     public double getX(){
         return x;
     }
+    
+    @Override
     public double getY(){
         return y;
     }
+
+    @Override
     public TowerType getSourceTowerType(){
         return source.getType();
     }
+
+    @Override
     public boolean isAlive(){
         return alive;
     }

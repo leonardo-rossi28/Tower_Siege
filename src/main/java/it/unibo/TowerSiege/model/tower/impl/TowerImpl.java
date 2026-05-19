@@ -1,6 +1,6 @@
 package it.unibo.TowerSiege.model.tower.impl;
 
-import it.unibo.TowerSiege.model.Enemy;
+import it.unibo.TowerSiege.model.enemy.impl.Enemy;
 import it.unibo.TowerSiege.model.tower.TowerType;
 
 public class TowerImpl {

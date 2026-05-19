@@ -1,6 +1,10 @@
-package it.unibo.TowerSiege.model;
+package it.unibo.TowerSiege.model.wave.impl;
 
 import java.util.List;
+
+import it.unibo.TowerSiege.model.enemy.EnemyType;
+import it.unibo.TowerSiege.model.enemy.impl.Enemy;
+
 import java.util.ArrayList;
 
 public class Wave {

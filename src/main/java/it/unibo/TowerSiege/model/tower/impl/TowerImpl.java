@@ -1,6 +1,10 @@
 package it.unibo.TowerSiege.model.tower.impl;
 
+<<<<<<< HEAD
 import it.unibo.TowerSiege.model.enemy.api.Enemy;
+=======
+import it.unibo.TowerSiege.model.enemy.impl.EnemyImpl;
+>>>>>>> main
 import it.unibo.TowerSiege.model.tower.TowerType;
 import it.unibo.TowerSiege.model.tower.api.Tower;
 import it.unibo.TowerSiege.model.projectile.api.Projectile;
@@ -45,11 +49,15 @@ public class TowerImpl implements Tower{
         }
     }
 
+<<<<<<< HEAD
     /**
      * {@inheritDoc}
      */
     @Override
     public boolean isEnemyInRange(Enemy enemy){
+=======
+    public boolean isEnemyInRange(EnemyImpl enemy){
+>>>>>>> main
         double dx= enemy.getPixelX()-pixelX;
         double dy= enemy.getPixelY() - pixelY;
         double distSq= dx*dx + dy*dy;

@@ -1,8 +1,8 @@
 package it.unibo.TowerSiege.model.projectile.impl;
 
-import it.unibo.TowerSiege.model.enemy.impl.EnemyImpl;
+import it.unibo.TowerSiege.model.enemy.api.Enemy;
 import it.unibo.TowerSiege.model.tower.TowerType;
-import it.unibo.TowerSiege.model.tower.impl.TowerImpl;
+import it.unibo.TowerSiege.model.tower.api.Tower;
 import it.unibo.TowerSiege.model.projectile.api.Projectile;
 
 /**
@@ -12,8 +12,8 @@ import it.unibo.TowerSiege.model.projectile.api.Projectile;
  */
 public class ProjectileImpl implements Projectile{
    
-    private final TowerImpl source;
-    private final EnemyImpl target;
+    private final Tower source;
+    private final Enemy target;
     private double x;
     private double y;
     private static final double speed=15.0;
@@ -26,7 +26,7 @@ public class ProjectileImpl implements Projectile{
      * @param source
      * @param target
      */
-    public ProjectileImpl(final TowerImpl source, final EnemyImpl target){
+    public ProjectileImpl(final Tower source, final Enemy target){
         this.source=source;
         this.target=target;
         this.x=source.getPixelX();
